@@ -1,0 +1,13 @@
+com\web\client\model\Fonctionnalite$Exigence.class
+com\web\client\model\GenderType.class
+com\web\client\model\Equipe.class
+com\mkyong\web\controller\HelloController.class
+com\web\client\model\StbList.class
+com\web\client\model\Fonctionnalite.class
+com\web\client\model\package-info.class
+com\web\client\model\MyHttpRequest.class
+com\web\client\model\Client.class
+com\web\client\model\ObjectFactory.class
+com\web\client\model\Stb.class
+com\web\client\model\AdrType.class
+com\web\client\model\Contact.class
