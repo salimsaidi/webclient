@@ -11,8 +11,8 @@ package com.web.client.model;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * <p>Java class for adrType complex type.
@@ -36,24 +36,39 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "adrType", propOrder = {
-    "adresse",
-    "ville",
-    "codePostal",
-    "pays"
-})
+@XmlRootElement(name = "adress")
+@XmlAccessorType(XmlAccessType.NONE)
 public class AdrType {
 
     @XmlElement(required = true)
     protected String adresse;
     @XmlElement(required = true)
     protected String ville;
+    
+    @XmlElement(name="codePostal")
     protected int codePostal;
+    
     @XmlElement(name = "Pays", required = true)
     protected String pays;
+    
+  
+    public AdrType() {
+  		super();
+  	}
 
-    /**
+  	public AdrType(String adresse, String ville, int codePostal, String pays) {
+  		super();
+  		this.adresse = adresse;
+  		this.ville = ville;
+  		this.codePostal = codePostal;
+  		this.pays = pays;
+  	}
+	
+	
+
+	
+
+	/**
      * Gets the value of the adresse property.
      * 
      * @return
@@ -61,22 +76,12 @@ public class AdrType {
      *     {@link String }
      *     
      */
+   
     public String getAdresse() {
         return adresse;
     }
 
-    public AdrType() {
-		super();
-	}
-
-	public AdrType(String adresse, String ville, int codePostal, String pays) {
-		super();
-		this.adresse = adresse;
-		this.ville = ville;
-		this.codePostal = codePostal;
-		this.pays = pays;
-	}
-
+  
 	/**
      * Sets the value of the adresse property.
      * 
@@ -97,6 +102,7 @@ public class AdrType {
      *     {@link String }
      *     
      */
+  
     public String getVille() {
         return ville;
     }
@@ -117,6 +123,7 @@ public class AdrType {
      * Gets the value of the codePostal property.
      * 
      */
+  
     public int getCodePostal() {
         return codePostal;
     }
@@ -137,6 +144,7 @@ public class AdrType {
      *     {@link String }
      *     
      */
+
     public String getPays() {
         return pays;
     }

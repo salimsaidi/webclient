@@ -4,9 +4,9 @@
 <title>Projet Web</title>
  
 <meta charset="UTF-8">
-<link href="D:/eclipse/workspace/Client/src/main/webapp/resources/core/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-<link href="D:/eclipse/workspace/Client/src/main/webapp/resources/core/css/bootstrap.min.css" rel="stylesheet" />
-<link href="D:/eclipse/workspace/Client/src/main/webapp/resources/core/css/style.css" rel="stylesheet" />
+<link href="../../resources/css/font-awesome.min.css" rel="stylesheet" />
+<link href="../../resources/css/bootstrap.min.css" rel="stylesheet" />
+<link href="../../resources/css/style.css" rel="stylesheet" />
 </head>
  <body>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -40,18 +40,19 @@
                 </div>
                 <div class="col-md-4">
                     <h3>Affihcer une STB complète</h3>
-                    <p>Affiche le contenu complet de la STB dont l'identifiant</p>
-                    <a href="#" class="btn btn-lg btn-outline">
+                    <p>Affiche le contenu complet de la STB dont l'identifiant est : 
+                    <input type="number" name="id" id="id" maxlength="3" value="0" /></p>
+                    <a href="#" class="btn btn-lg btn-outline" >
                         <i class="fa fa-code"></i> En XML
                     </a>
-                    <a href="#" class="btn btn-lg btn-outline">
+                    <a href="#" class="btn btn-lg btn-outline" >
                         <i class="fa fa-html5"></i>En HTML
                     </a>
                 </div>
                 <div class="col-md-4">
                    <h3>Ajouter une nouvelle STB</h3>
                     <p>Dépose une nouvelle STB. Une vérification syntaxique du contenu est effectuée, afin de n'autoriser que des dépôts corrects (validation XSD par le service).</p>
-                    <a href="#" class="btn btn-lg btn-outline">
+                    <a href="depot.html" class="btn btn-lg btn-outline">
                         <i class="fa fa-plus"></i> Ajouter
                     </a>
                     
@@ -74,7 +75,7 @@
  </footer>
  
 
-<script src="D:/eclipse/workspace/Client/src/main/webapp/resources/core/js/jquery.min.js"></script>
+<script src="D:/eclipse/workspace/Client/src/main/webapp/resources/core/js/jquery.js"></script>
 <script src="D:/eclipse/workspace/Client/src/main/webapp/resources/core/js/bootstrap.min.js"></script>
 <script src="D:/eclipse/workspace/Client/src/main/webapp/resources/core/js/jqBootstrapValidation.js"></script>
 </body>

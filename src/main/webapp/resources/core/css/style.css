@@ -3,11 +3,28 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+ .panel-heading .badge{
+    float: right;
+ }
+ span.h{
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    display: inline-block;
+    text-decoration: underline;
+ }
  .btn-right
  {
     float: right;
     color: #D24726;
     opacity: 0.5;
+ }
+ .btn-right-r
+ {
+    float: right;
+   
+    opacity: 0.9;
  }
  .btn-right:hover
  {
@@ -214,6 +231,7 @@ header .intro-text .skills {
 
 section {
     padding: 100px 0;
+    min-height: 512px;
 }
 
 section h2 {

@@ -46,11 +46,12 @@
                 </div>
                 <div class="col-md-4">
                     <h3>Affihcer une STB complète</h3>
-                    <p>Affiche le contenu complet de la STB dont l'identifiant</p>
-                    <a href="#" class="btn btn-lg btn-outline">
+                    <p>Affiche le contenu complet de la STB dont l'identifiant : 
+                    <input type="text" name="id" id="id" maxlength="3" value="0" /></p>
+                    <a href="#" class="btn btn-lg btn-outline btnstb-xml">
                         <i class="fa fa-code"></i> En XML
                     </a>
-                    <a href="#" class="btn btn-lg btn-outline">
+                    <a href="#" class="btn btn-lg btn-outline btnstb-html">
                         <i class="fa fa-html5"></i>En HTML
                     </a>
                 </div>
@@ -79,12 +80,14 @@
 </div>
  </footer>
  
-<spring:url value="/resources/core/css/jquery.min.js" var="jqueryJs" />
-<spring:url value="/resources/core/css/bootstrap.min.js" var="bootstrapJs" />
-<spring:url value="/resources/core/css/jqBootstrapValidation.js" var="bootvalJs" />
+<spring:url value="/resources/core/js/jquery.js" var="jqueryJs" />
+<spring:url value="/resources/core/js/bootstrap.min.js" var="bootstrapJs" />
+<spring:url value="/resources/core/js/jqBootstrapValidation.js" var="bootvalJs" />
+<spring:url value="/resources/core/js/hello.js" var="helloJs" />
  
 <script src="${jqueryJs}"></script>
 <script src="${bootstrapJs}"></script>
 <script src="${bootvalJs}"></script>
+<script src="${helloJs}"></script>
 </body>
 </html>

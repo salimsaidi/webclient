@@ -12,6 +12,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -35,14 +36,21 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 	
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
 
-})
 @XmlRootElement(name = "equipe")
+@XmlAccessorType(XmlAccessType.NONE)
 public class Equipe {
+	
 
-    public Equipe() {
+	@XmlElement(required = true)
+	protected GenderType nom;
+	
+	@XmlElement(required = true)
+	protected String prenom;
+	
+	
+
+	public Equipe() {
 		super();
 	}
 
@@ -52,57 +60,58 @@ public class Equipe {
 		this.prenom = prenom;
 	}
 
-	@XmlElement(required = true)
-    protected GenderType nom;
-    @XmlElement(required = true)
-    protected String prenom;
+	
+	
 
-    /**
-     * Gets the value of the nom property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link GenderType }
-     *     
-     */
-    public GenderType getNom() {
-        return nom;
-    }
 
-    /**
-     * Sets the value of the nom property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link GenderType }
-     *     
-     */
-    public void setNom(GenderType value) {
-        this.nom = value;
-    }
+	/**
+	 * Gets the value of the nom property.
+	 * 
+	 * @return
+	 *     possible object is
+	 *     {@link GenderType }
+	 *     
+	 */
+	
+	public GenderType getNom() {
+		return nom;
+	}
 
-    /**
-     * Gets the value of the prenom property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPrenom() {
-        return prenom;
-    }
+	/**
+	 * Sets the value of the nom property.
+	 * 
+	 * @param value
+	 *     allowed object is
+	 *     {@link GenderType }
+	 *     
+	 */
+	public void setNom(GenderType value) {
+		this.nom = value;
+	}
 
-    /**
-     * Sets the value of the prenom property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPrenom(String value) {
-        this.prenom = value;
-    }
+	/**
+	 * Gets the value of the prenom property.
+	 * 
+	 * @return
+	 *     possible object is
+	 *     {@link String }
+	 *     
+	 */
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	/**
+	 * Sets the value of the prenom property.
+	 * 
+	 * @param value
+	 *     allowed object is
+	 *     {@link String }
+	 *     
+	 */
+	public void setPrenom(String value) {
+		this.prenom = value;
+	}
 
 }

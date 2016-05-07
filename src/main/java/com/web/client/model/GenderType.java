@@ -5,20 +5,22 @@
 // Generated on: 2016.04.28 at 03:58:12 PM CEST 
 //
 
-
 package com.web.client.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlValue;
 
-
 /**
- * <p>Java class for genderType complex type.
+ * <p>
+ * Java class for genderType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="genderType">
@@ -32,13 +34,19 @@ import javax.xml.bind.annotation.XmlValue;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "genderType", propOrder = {
-    "value"
-})
+
+@XmlAccessorType(XmlAccessType.NONE)
 public class GenderType {
 
-    public GenderType() {
+	@XmlValue
+	private String value;
+	
+	@XmlAttribute(name = "gender", required = true)
+	private boolean gender;
+	
+	
+
+	public GenderType() {
 		super();
 	}
 
@@ -48,49 +56,44 @@ public class GenderType {
 		this.gender = gender;
 	}
 
-	@XmlValue
-    protected String value;
-    @XmlAttribute(name = "gender", required = true)
-    protected boolean gender;
+	
 
-    /**
-     * Gets the value of the value property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getValue() {
-        return value;
-    }
+	/**
+	 * Gets the value of the value property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
 
-    /**
-     * Sets the value of the value property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setValue(String value) {
-        this.value = value;
-    }
+	public String getValue() {
+		return value;
+	}
 
-    /**
-     * Gets the value of the gender property.
-     * 
-     */
-    public boolean isGender() {
-        return gender;
-    }
+	/**
+	 * Sets the value of the value property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setValue(String value) {
+		this.value = value;
+	}
 
-    /**
-     * Sets the value of the gender property.
-     * 
-     */
-    public void setGender(boolean value) {
-        this.gender = value;
-    }
+	/**
+	 * Gets the value of the gender property.
+	 * 
+	 */
+	public boolean getGender() {
+		return gender;
+	}
+
+	/**
+	 * Sets the value of the gender property.
+	 * 
+	 */
+	public void setGender(boolean value) {
+		this.gender = value;
+	}
 
 }

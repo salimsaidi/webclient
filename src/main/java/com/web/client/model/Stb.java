@@ -5,24 +5,26 @@
 // Generated on: 2016.04.28 at 03:58:12 PM CEST 
 //
 
-
 package com.web.client.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -45,50 +47,39 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "titre",
-    "version",
-    "date",
-    "description",
-    "client",
-    "equipe",
-    "fonctionnalite",
-    "commentaire"
-})
+
 @XmlRootElement(name = "stb")
+@XmlAccessorType(XmlAccessType.NONE)
 public class Stb {
 
-    @XmlElement( required = true)
-    protected String titre;
-    @XmlElement(required = true, defaultValue = "0.1")
-    protected String version;
-    @XmlElement( required = true)
-    @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar date;
-    @XmlElement( required = true)
-    protected String description;
-    @XmlElement(required = true)
-    protected Client client;
-    @XmlElement( required = true)
-    protected List<Equipe> equipe;
-    @XmlElement( required = true)
-    protected List<Fonctionnalite> fonctionnalite;
-    @XmlElement()
-    protected List<String> commentaire;
-    /**
-     * Gets the value of the titre property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTitre() {
-        return titre;
-    }
+	@XmlElement(required = true)
+	protected String titre;
+	
+	@XmlElement(required = true, defaultValue = "0.1")
+	protected String version;
+	
+	@XmlElement(required = true)
+	@XmlSchemaType(name = "date")
+	protected Date date;
+	
+	@XmlElement(required = true)
+	protected String description;
+	
+	@XmlElement(required = true)
+	protected Client client;
+	
+	@XmlElement(required = true)
+	protected List<Equipe> equipe;
+	
+	@XmlElement(required = true)
+	protected List<Fonctionnalite> fonctionnalite;
+	
+	
+	@XmlElement()
+	protected List<String> commentaire;
+	
 
-    public Stb(String titre, String version, XMLGregorianCalendar date, String description, Client client,
+	public Stb(String titre, String version, Date date, String description, Client client,
 			List<Equipe> equipe, List<Fonctionnalite> fonctionnalite, List<String> commentaire) {
 		super();
 		this.titre = titre;
@@ -104,200 +95,224 @@ public class Stb {
 	public Stb() {
 		super();
 	}
+	
+	
 
 	/**
-     * Sets the value of the titre property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTitre(String value) {
-        this.titre = value;
-    }
+	 * Gets the value of the titre property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getTitre() {
+		return titre;
+	}
 
-    /**
-     * Gets the value of the version property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getVersion() {
-        return version;
-    }
+	/**
+	 * Sets the value of the titre property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setTitre(String value) {
+		this.titre = value;
+	}
 
-    /**
-     * Sets the value of the version property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVersion(String value) {
-        this.version = value;
-    }
+	/**
+	 * Gets the value of the version property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
 
-    /**
-     * Gets the value of the date property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getDate() {
-        return date;
-    }
+	
+	public String getVersion() {
+		return version;
+	}
 
-    /**
-     * Sets the value of the date property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setDate(XMLGregorianCalendar value) {
-        this.date = value;
-    }
+	/**
+	 * Sets the value of the version property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setVersion(String value) {
+		this.version = value;
+	}
 
-    /**
-     * Gets the value of the description property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDescription() {
-        return description;
-    }
+	/**
+	 * Gets the value of the date property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	
+	
+	public Date getDate() {
+		return date;
+	}
+	
 
-    /**
-     * Sets the value of the description property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
+	/**
+	 * Sets the value of the date property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setDate(Date value) {
+			this.date = value;
+	
+	}
 
-    /**
-     * Gets the value of the client property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Client }
-     *     
-     */
-    public Client getClient() {
-        return client;
-    }
+	/**
+	 * Gets the value of the description property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	
+	public String getDescription() {
+		return description;
+	}
 
-    /**
-     * Sets the value of the client property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Client }
-     *     
-     */
-    public void setClient(Client value) {
-        this.client = value;
-    }
+	/**
+	 * Sets the value of the description property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setDescription(String value) {
+		this.description = value;
+	}
 
-    /**
-     * Gets the value of the equipe property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the equipe property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEquipe().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Equipe }
-     * 
-     * 
-     */
-    public List<Equipe> getEquipe() {
-        if (equipe == null) {
-            equipe = new ArrayList<Equipe>();
-        }
-        return this.equipe;
-    }
+	/**
+	 * Gets the value of the client property.
+	 * 
+	 * @return possible object is {@link Client }
+	 * 
+	 */
+	
+	public Client getClient() {
+		return client;
+	}
 
-    /**
-     * Gets the value of the fonctionnalite property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fonctionnalite property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFonctionnalite().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Fonctionnalite }
-     * 
-     * 
-     */
-    public List<Fonctionnalite> getFonctionnalite() {
-        if (fonctionnalite == null) {
-            fonctionnalite = new ArrayList<Fonctionnalite>();
-        }
-        return this.fonctionnalite;
-    }
+	/**
+	 * Sets the value of the client property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Client }
+	 * 
+	 */
+	public void setClient(Client value) {
+		this.client = value;
+	}
 
-    /**
-     * Gets the value of the commentaire property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the commentaire property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCommentaire().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getCommentaire() {
-        if (commentaire == null) {
-            commentaire = new ArrayList<String>();
-        }
-        return this.commentaire;
-    }
+	/**
+	 * Gets the value of the equipe property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the equipe property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getEquipe().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list {@link Equipe }
+	 * 
+	 * 
+	 */
+	
+	public List<Equipe> getEquipe() {
+		if (equipe == null) {
+			equipe = new ArrayList<Equipe>();
+		}
+		return this.equipe;
+	}
+
+	/**
+	 * Gets the value of the fonctionnalite property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the fonctionnalite property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getFonctionnalite().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link Fonctionnalite }
+	 * 
+	 * 
+	 */
+	
+	public List<Fonctionnalite> getFonctionnalite() {
+		if (fonctionnalite == null) {
+			fonctionnalite = new ArrayList<Fonctionnalite>();
+		}
+		return this.fonctionnalite;
+	}
+
+	/**
+	 * Gets the value of the commentaire property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the commentaire property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getCommentaire().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list {@link String }
+	 * 
+	 * 
+	 */
+	
+	public List<String> getCommentaire() {
+		if (commentaire == null) {
+			commentaire = new ArrayList<String>();
+		}
+		return this.commentaire;
+	}
+
+
+	public void setEquipe(List<Equipe> equipe) {
+		this.equipe = equipe;
+	}
+
+	public void setFonctionnalite(List<Fonctionnalite> fonctionnalite) {
+		this.fonctionnalite = fonctionnalite;
+	}
+
+	public void setCommentaire(List<String> commentaire) {
+		this.commentaire = commentaire;
+	}
 
 }

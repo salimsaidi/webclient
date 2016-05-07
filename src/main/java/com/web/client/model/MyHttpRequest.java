@@ -26,7 +26,7 @@ import org.xml.sax.SAXException;
 
 public class MyHttpRequest {
 	
-	private String uri ="http://www.w3schools.com/xml/note.xml";
+	public static final String URI ="http://heroku-postgres-d6dd6dc6.herokuapp.com/";
 	
 	/**
 	 * 
@@ -37,12 +37,38 @@ public class MyHttpRequest {
 	 * @throws SAXException
 	 * @throws JAXBException
 	 */
-	public Stb httpGetStb(Integer id) throws IOException, ParserConfigurationException, SAXException, JAXBException {
+	public Stb httpGetStbObject(Integer id) throws IOException, ParserConfigurationException, SAXException, JAXBException {
 		JAXBContext context = JAXBContext.newInstance(Stb.class);
-		InputStream xml = this.sendGet("resume/" + String.valueOf(id));
+		InputStream xml = this.sendGet("resume/" + id);
 		Unmarshaller un = context.createUnmarshaller();
-		Stb stb = (Stb) un.unmarshal(xml);
-		return stb;
+		if(xml.available()!=0){
+			Stb stb = (Stb) un.unmarshal(xml);
+			return stb;
+		}
+		return null;
+		
+	}
+	
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws IOException
+	 * @throws ParserConfigurationException
+	 * @throws SAXException
+	 * @throws JAXBException
+	 */
+	public String httpGetStbXml(Integer id) throws IOException, ParserConfigurationException, SAXException, JAXBException {
+		InputStream xml = this.sendGet("resume/" + id);
+		StringBuilder sb=new StringBuilder();
+		BufferedReader br = new BufferedReader(new InputStreamReader(xml));
+		String read;
+		while((read=br.readLine()) != null) {
+		    sb.append(read);   
+		}
+		br.close();
+		return sb.toString();
 	}
 	
 	/**
@@ -54,20 +80,30 @@ public class MyHttpRequest {
 	 * @throws ParserConfigurationException
 	 * @throws SAXException
 	 */
-	public StbList httpGetStbList() throws JAXBException, IOException, ParserConfigurationException, SAXException{
-		JAXBContext context = JAXBContext.newInstance(StbList.class);
+	public ResumeList httpGetResumeListObject() throws JAXBException, IOException, ParserConfigurationException, SAXException{
+		JAXBContext context = JAXBContext.newInstance(ResumeList.class);
 		InputStream xml = this.sendGet("resume");
 		Unmarshaller un = context.createUnmarshaller();
-		StbList listStb = (StbList) un.unmarshal(xml);
-		return listStb;
+		ResumeList resumeList = (ResumeList) un.unmarshal(xml);
+		return resumeList;
+	}
+	
+	public String httpGetResumeListXml() throws JAXBException, IOException, ParserConfigurationException, SAXException{
+		InputStream xml = this.sendGet("resume");
+		StringBuilder sb=new StringBuilder();
+		BufferedReader br = new BufferedReader(new InputStreamReader(xml));
+		String read;
+		while((read=br.readLine()) != null) {
+		    sb.append(read);   
+		}
+		br.close();
+		return sb.toString();
 	}
 	
 	
 	public String httpPostStb(String xml) throws IOException{
-		String response = this.sendPost("depot", xml);
+		String response = this.sendPost("depotstb/", xml);
 		return response;
-		
-		
 	}
 	
 	
@@ -96,15 +132,11 @@ public class MyHttpRequest {
 	 * @throws JAXBException
 	 */
 	private InputStream sendGet(String param) throws IOException, ParserConfigurationException, SAXException, JAXBException{
-		URL url = new URL(this.uri+"/"+param);
+		URL url = new URL(MyHttpRequest.URI+param);
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.setRequestMethod("GET");
 		connection.setRequestProperty("Accept", "application/xml");
 		return connection.getInputStream();
-//		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-//		DocumentBuilder db = dbf.newDocumentBuilder();
-//		Document doc = db.parse(xml);
-//		return doc;
 	}
 	
 	
@@ -112,7 +144,7 @@ public class MyHttpRequest {
 		// Create the HTTPS Client
 		 HttpClient httpclient = new HttpClient();
 		 // creates the post method to use.
-		 PostMethod post = new PostMethod( uri+"/"+param );
+		 PostMethod post = new PostMethod(MyHttpRequest.URI+param );
 		 
 		 post.setRequestEntity( new StringRequestEntity(xml, "text/xml", "ISO-8859-1") );
 		 // Specify content type and encoding
@@ -141,8 +173,6 @@ public class MyHttpRequest {
 
 	}
 		
-	public void setUrl(String uri){
-		this.uri = uri;
-	}
+	
 
 }

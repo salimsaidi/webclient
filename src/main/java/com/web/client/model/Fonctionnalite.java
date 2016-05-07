@@ -10,12 +10,13 @@ package com.web.client.model;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
+
 
 
 /**
@@ -51,94 +52,26 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "priorite",
-    "description",
-    "exigence"
-})
+
+
 @XmlRootElement(name = "fonctionnalite")
+@XmlAccessorType(XmlAccessType.NONE)
 public class Fonctionnalite {
 
-    protected int priorite;
-    @XmlElement(required = true)
-    protected String description;
-    @XmlElement(required = true)
-    protected List<Fonctionnalite.Exigence> exigence;
+	protected int priorite;
+	
+	@XmlElement(required = true)
+	protected String description;
+	
+	
+	@XmlElement(required = true)
+    protected List<Exigence> exigence;
 
-    /**
-     * Gets the value of the priorite property.
-     * 
-     */
-    public int getPriorite() {
-        return priorite;
-    }
-
-    /**
-     * Sets the value of the priorite property.
-     * 
-     */
-    public void setPriorite(int value) {
-        this.priorite = value;
-    }
-
-    /**
-     * Gets the value of the description property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * Sets the value of the description property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
-
-    /**
-     * Gets the value of the exigence property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the exigence property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExigence().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Fonctionnalite.Exigence }
-     * 
-     * 
-     */
-    public List<Fonctionnalite.Exigence> getExigence() {
-        if (exigence == null) {
-            exigence = new ArrayList<Fonctionnalite.Exigence>();
-        }
-        return this.exigence;
-    }
-
-
-    public Fonctionnalite() {
+	public Fonctionnalite() {
 		super();
 	}
+	
+	
 
 	public Fonctionnalite(int priorite, String description, List<Exigence> exigence) {
 		super();
@@ -148,115 +81,85 @@ public class Fonctionnalite {
 	}
 
 
+
+	
 	/**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element ref="{http://univ.fr/stb}priorite"/>
-     *       &lt;/all>
-     *       &lt;attribute name="identifiant" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
+	 * Gets the value of the priorite property.
+	 * 
+	 */
+	
+	public int getPriorite() {
+		return priorite;
+	}
 
-    })
-    public static class Exigence {
+	/**
+	 * Sets the value of the priorite property.
+	 * 
+	 */
+	public void setPriorite(int value) {
+		this.priorite = value;
+	}
 
-        @XmlElement(required = true)
-        protected String description;
-        @XmlElement(namespace = "http://univ.fr/stb")
-        protected int priorite;
-        @XmlAttribute(name = "identifiant", required = true)
-        protected String identifiant;
+	/**
+	 * Gets the value of the description property.
+	 * 
+	 * @return
+	 *     possible object is
+	 *     {@link String }
+	 *     
+	 */
+	
+	public String getDescription() {
+		return description;
+	}
 
-        public Exigence() {
-			super();
-		}
+	/**
+	 * Sets the value of the description property.
+	 * 
+	 * @param value
+	 *     allowed object is
+	 *     {@link String }
+	 *     
+	 */
+	public void setDescription(String value) {
+		this.description = value;
+	}
 
-		/**
-         * Gets the value of the description property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getDescription() {
-            return description;
-        }
+	/**
+	 * Gets the value of the exigence property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list,
+	 * not a snapshot. Therefore any modification you make to the
+	 * returned list will be present inside the JAXB object.
+	 * This is why there is not a <CODE>set</CODE> method for the exigence property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * <pre>
+	 *    getExigence().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link Fonctionnalite.Exigence }
+	 * 
+	 * 
+	 */
+	 public List<Exigence> getExigence() {
+	        if (exigence == null) {
+	            exigence = new ArrayList<Exigence>();
+	        }
+	        return this.exigence;
+	    }
+	 
+	 
 
-        public Exigence(String description, int priorite, String identifiant) {
-			super();
-			this.description = description;
-			this.priorite = priorite;
-			this.identifiant = identifiant;
-		}
+	public void setExigence(List<Exigence> exigence) {
+		this.exigence = exigence;
+	}
 
-		/**
-         * Sets the value of the description property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setDescription(String value) {
-            this.description = value;
-        }
 
-        /**
-         * Gets the value of the priorite property.
-         * 
-         */
-        public int getPriorite() {
-            return priorite;
-        }
-
-        /**
-         * Sets the value of the priorite property.
-         * 
-         */
-        public void setPriorite(int value) {
-            this.priorite = value;
-        }
-
-        /**
-         * Gets the value of the identifiant property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getIdentifiant() {
-            return identifiant;
-        }
-
-        /**
-         * Sets the value of the identifiant property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setIdentifiant(String value) {
-            this.identifiant = value;
-        }
-
-    }
-
+	
 }

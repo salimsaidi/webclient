@@ -8,10 +8,12 @@
 
 package com.web.client.model;
 
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -36,101 +38,111 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
 
-})
+
 @XmlRootElement(name = "contact")
+@XmlAccessorType(XmlAccessType.NONE)
 public class Contact {
 
-    public Contact(String nom, String prenom, AdrType adress) {
+	@XmlElement(required = true)
+	protected String nom;
+	@XmlElement(required = true)
+	protected String prenom;
+	@XmlElement(required = true)
+	protected AdrType adress;
+	
+	
+	public Contact() {
+		super();
+	}
+	
+	public Contact(String nom, String prenom, AdrType adress) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adress = adress;
 	}
+	
+	
 
-	@XmlElement(required = true)
-    protected String nom;
-    @XmlElement(required = true)
-    protected String prenom;
-    @XmlElement(required = true)
-    protected AdrType adress;
 
-    /**
-     * Gets the value of the nom property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getNom() {
-        return nom;
-    }
 
-    /**
-     * Sets the value of the nom property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNom(String value) {
-        this.nom = value;
-    }
 
-    /**
-     * Gets the value of the prenom property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPrenom() {
-        return prenom;
-    }
 
-    /**
-     * Sets the value of the prenom property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPrenom(String value) {
-        this.prenom = value;
-    }
-
-    /**
-     * Gets the value of the adress property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link AdrType }
-     *     
-     */
-    public AdrType getAdress() {
-        return adress;
-    }
-
-    public Contact() {
-		super();
+	/**
+	 * Gets the value of the nom property.
+	 * 
+	 * @return
+	 *     possible object is
+	 *     {@link String }
+	 *     
+	*/
+	public String getNom() {
+		return nom;
 	}
 
 	/**
-     * Sets the value of the adress property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AdrType }
-     *     
-     */
-    public void setAdress(AdrType value) {
-        this.adress = value;
-    }
+	 * Sets the value of the nom property.
+	 * 
+	 * @param value
+	 *     allowed object is
+	 *     {@link String }
+	 *     
+	 */
+	public void setNom(String value) {
+		this.nom = value;
+	}
+
+	/**
+	 * Gets the value of the prenom property.
+	 * 
+	 * @return
+	 *     possible object is
+	 *     {@link String }
+	 *     
+	 */
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	/**
+	 * Sets the value of the prenom property.
+	 * 
+	 * @param value
+	 *     allowed object is
+	 *     {@link String }
+	 *     
+	 */
+	public void setPrenom(String value) {
+		this.prenom = value;
+	}
+
+	/**
+	 * Gets the value of the adress property.
+	 * 
+	 * @return
+	 *     possible object is
+	 *     {@link AdrType }
+	 *     
+	 */
+	
+	public AdrType getAdress() {
+		return adress;
+	}
+
+	
+
+	/**
+	 * Sets the value of the adress property.
+	 * 
+	 * @param value
+	 *     allowed object is
+	 *     {@link AdrType }
+	 *     
+	 */
+	public void setAdress(AdrType value) {
+		this.adress = value;
+	}
 
 }

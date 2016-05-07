@@ -8,12 +8,13 @@
 
 package com.web.client.model;
 
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
-
 
 /**
  * <p>Java class for anonymous complex type.
@@ -35,14 +36,22 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
 
-})
 @XmlRootElement(name = "client")
+@XmlAccessorType(XmlAccessType.NONE)
 public class Client {
 
-    public Client(String entite, Contact contact) {
+	@XmlElement(required = true)
+	protected String entite;
+	@XmlElement(required = true)
+	protected Contact contact;
+
+ 
+
+
+
+
+	public Client(String entite, Contact contact) {
 		super();
 		this.entite = entite;
 		this.contact = contact;
@@ -52,57 +61,56 @@ public class Client {
 		super();
 	}
 
-	@XmlElement(required = true)
-    protected String entite;
-    @XmlElement(namespace = "http://univ.fr/stb", required = true)
-    protected Contact contact;
 
-    /**
-     * Gets the value of the entite property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEntite() {
-        return entite;
-    }
 
-    /**
-     * Sets the value of the entite property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEntite(String value) {
-        this.entite = value;
-    }
+	/**
+	 * Gets the value of the entite property.
+	 * 
+	 * @return
+	 *     possible object is
+	 *     {@link String }
+	 *     
+	 */
 
-    /**
-     * Gets the value of the contact property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Contact }
-     *     
-     */
-    public Contact getContact() {
-        return contact;
-    }
+	public String getEntite() {
+		return entite;
+	}
 
-    /**
-     * Sets the value of the contact property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Contact }
-     *     
-     */
-    public void setContact(Contact value) {
-        this.contact = value;
-    }
+	
+	/**
+	 * Sets the value of the entite property.
+	 * 
+	 * @param value
+	 *     allowed object is
+	 *     {@link String }
+	 *     
+	 */
+	public void setEntite(String value) {
+		this.entite = value;
+	}
+
+	/**
+	 * Gets the value of the contact property.
+	 * 
+	 * @return
+	 *     possible object is
+	 *     {@link Contact }
+	 *     
+	 */
+	public Contact getContact() {
+		return contact;
+	}
+
+	/**
+	 * Sets the value of the contact property.
+	 * 
+	 * @param value
+	 *     allowed object is
+	 *     {@link Contact }
+	 *     
+	 */
+	public void setContact(Contact value) {
+		this.contact = value;
+	}
 
 }
